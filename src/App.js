@@ -38,11 +38,11 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        
+
         <Icon path={mdiWeatherHurricane}
           size={4}
           color="white"
-          className="App-logo"
+          spin
         />
         <h2>Temp: {results.currently.temperature}</h2>
         <h3>Summary: {results.currently.summary}</h3>
