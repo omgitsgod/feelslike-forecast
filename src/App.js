@@ -11,7 +11,17 @@ function App() {
   const [humidity, setHumidity] = useState(0)
   const [stormDistance, setStormDistance] = useState(0)
   const [results, setResults] = useState({})
-  fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_WEATHER_API_KEY}/42.3601,-71.0589`)
+  let lat, long
+
+
+  const handleCoords = (coords) => {
+    console.log(coords.coords.latitude,coords.coords.longitude);
+    lat = coords.coords.latitude
+    long = coords.coords.longitude
+  }
+  navigator.geolocation.getCurrentPosition(handleCoords)
+
+  fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_WEATHER_API_KEY}/${lat || 42.3601},${long || -71.0589}`)
   .then(r => r.json()).then(result => {
     setResults(result)
   //  setTemp(result.temperature)
@@ -40,7 +50,11 @@ function App() {
   );
 } else {
   return (
+    <div className="App">
+      <header className="App-header">
     <p>loading...</p>
+    </header>
+    </div>
   )
 }
 }
