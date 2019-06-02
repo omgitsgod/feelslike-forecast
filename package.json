@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dark-sky-api": "^0.6.32",
+    "@mdi/js": "^3.6.95",
+    "@mdi/react": "^1.1.1",
     "dotenv": "^8.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

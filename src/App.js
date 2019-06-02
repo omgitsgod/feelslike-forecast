@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import DarkSkyApi from 'dark-sky-api';
-//DarkSkyApi.apiKey = process.env.REACT_APP_WEATHER_API_KEY
+import Icon from '@mdi/react'
+import {mdiWeatherHurricane} from '@mdi/js'
 
 function App() {
   const [temp, setTemp] = useState(0)
@@ -12,6 +12,7 @@ function App() {
   const [stormDistance, setStormDistance] = useState(0)
   const [results, setResults] = useState({})
   let lat, long
+
 
 
   const handleCoords = (coords) => {
@@ -37,8 +38,12 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
+        
+        <Icon path={mdiWeatherHurricane}
+          size={4}
+          color="white"
+          className="App-logo"
+        />
         <h2>Temp: {results.currently.temperature}</h2>
         <h3>Summary: {results.currently.summary}</h3>
         <h3>Cloud Cover: {Math.floor(results.currently.cloudCover * 100)}%</h3>
