@@ -8,7 +8,7 @@ function Hourly() {
   return (
 
     <div>
-
+    <h1>Hourly Forecast</h1>
     </div>
   )
 

@@ -3,7 +3,7 @@ import './App.css';
 import Icon from '@mdi/react'
 import {mdiWeatherHurricane} from '@mdi/js'
 
-function Today() {
+function Currently() {
   const [temp, setTemp] = useState(0)
   const [sum, setSum] = useState('')
   const [cloud, setCloud] = useState(0)
@@ -43,6 +43,8 @@ function Today() {
           color="white"
           spin
         />
+        <h1>Right now:</h1>
+        <br />
         <h2>Temp: {results.currently.temperature}</h2>
         <h3>Summary: {results.currently.summary}</h3>
         <h3>Cloud Cover: {Math.floor(results.currently.cloudCover * 100)}%</h3>
@@ -63,4 +65,4 @@ function Today() {
 }
 }
 
-export default Today;
+export default Currently;

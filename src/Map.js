@@ -8,7 +8,7 @@ function Map() {
   return (
 
     <div>
-
+      <h1>Radar Map</h1>
     </div>
   )
 
