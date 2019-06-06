@@ -15,7 +15,7 @@ function Currently(props) {
 
 
 
-  if (results.currently) {
+  if (props.currently) {
   return (
 
     <div className="Section">
@@ -28,11 +28,11 @@ function Currently(props) {
         />
         <h1>Right now:</h1>
         <br />
-        <h2>Temp: {results.currently.temperature}</h2>
-        <h3>Summary: {results.currently.summary}</h3>
-        <h3>Cloud Cover: {Math.floor(results.currently.cloudCover * 100)}%</h3>
-        <h3>humidity: {Math.floor(results.currently.humidity * 100)}%</h3>
-        <h3>Storm Distance: {results.currently.nearestStormDistance} miles away</h3>
+        <h2>Temp: {props.currently.temperature}</h2>
+        <h3>Summary: {props.currently.summary}</h3>
+        <h3>Cloud Cover: {Math.floor(props.currently.cloudCover * 100)}%</h3>
+        <h3>humidity: {Math.floor(props.currently.humidity * 100)}%</h3>
+        <h3>Storm Distance: {props.currently.nearestStormDistance} miles away</h3>
 
       </header>
     </div>

@@ -29,9 +29,9 @@ function App() {
     <header className="Section-header">
       <Sidebar />
       <Route exact path="/" render={(props)=><Home {...props} daily={results.daily}/>}/>
-      <Route exact path="/current" component={Current} />
+      <Route exact path="/current" render={(props)=><Current {...props} currently={results.currently}/>}/>
+      <Route exact path="/hourly" render={(props)=><Hourly {...props} hourly={results.hourly}/>}/>
       <Route exact path="/fiveday" component={FiveDay} />
-      <Route exact path="/hourly" component={Hourly} />
       <Route exact path ="/map" component={Map} />
     </header>
   )
