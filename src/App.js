@@ -4,6 +4,7 @@ import './App.css';
 import { Route  } from 'react-router-dom'
 import Home from './Home'
 import Today from './Today'
+import FiveDay from './FiveDay'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <div>
     <Route exact path="/" component={Home} />
     <Route exact path="/today" component={Today} />
+    <Route exact path="/fiveday" component={FiveDay} />
     </div>
   )
 }

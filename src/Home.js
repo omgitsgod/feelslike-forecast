@@ -5,11 +5,6 @@ import {mdiWeatherHurricane} from '@mdi/js'
 
 function Home() {
 
-
-
-
-
-
   return (
 
     <div className="App">
