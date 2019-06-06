@@ -4,7 +4,7 @@ import { Route  } from 'react-router-dom'
 import Home from './Home'
 import Sidebar from './Sidebar'
 import Current from './Current'
-import FiveDay from './FiveDay'
+import Week from './Week'
 import Hourly from './Hourly'
 import Map from './Map'
 

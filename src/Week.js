@@ -3,7 +3,7 @@ import './App.css';
 import Icon from '@mdi/react'
 import {mdiWeatherHurricane} from '@mdi/js'
 
-function FiveDay() {
+function Week() {
 
   return (
 
@@ -16,4 +16,4 @@ function FiveDay() {
 
 }
 
-export default FiveDay;
+export default Week;
