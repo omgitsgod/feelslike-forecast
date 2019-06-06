@@ -12,14 +12,14 @@ function App() {
 
 
   return (
-    <div>
+    <header className="Section-header">
     <Sidebar />
     <Route exact path="/" component={Home} />
     <Route exact path="/currently" component={Currently} />
     <Route exact path="/fiveday" component={FiveDay} />
     <Route exact path="/hourly" component={Hourly} />
     <Route exact path ="/map" component={Map} />
-    </div>
+    </header>
   )
 }
 
