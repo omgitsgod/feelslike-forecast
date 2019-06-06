@@ -17,7 +17,7 @@ function Home(props) {
           color="#61dafb"
           spin
         />
-        <h1> Welcome! </h1>
+        <h1> Welcome to Feelslike Forecast!</h1>
         {props.daily ? <p>{props.daily.summary}</p> : null}
 
       </header>
