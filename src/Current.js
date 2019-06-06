@@ -26,6 +26,8 @@ function Currently(props) {
           color="#61dafb"
           spin
         />
+        <div className="boxy">
+        <div className="inner">
         <h1>Right now:</h1>
         <br />
         <h2>Temp: {props.currently.temperature}</h2>
@@ -33,7 +35,8 @@ function Currently(props) {
         <h3>Cloud Cover: {Math.floor(props.currently.cloudCover * 100)}%</h3>
         <h3>humidity: {Math.floor(props.currently.humidity * 100)}%</h3>
         <h3>Storm Distance: {props.currently.nearestStormDistance} miles away</h3>
-
+        </div>
+        </div>
       </header>
     </div>
   );

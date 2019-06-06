@@ -9,7 +9,7 @@ function Week(props) {
     daily = props.daily.data.map(x => {
 
     return (
-    <div>
+    <div className="boxy">
     <h5>Day</h5>
     <p>High: {x.apparentTemperatureHigh}</p>
     <p>Low: {x.apparentTemperatureLow}</p>

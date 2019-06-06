@@ -10,7 +10,7 @@ function Hourly(props) {
     hours = props.hourly.data.map(x => {
 
     return (
-    <div>
+    <div className="boxy">
     <h5>{hour++} hour(s) from now</h5>
     <p>Temp: {x.apparentTemperature}</p>
     <p>{x.summary}</p>

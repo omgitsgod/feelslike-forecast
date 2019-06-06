@@ -46,3 +46,12 @@
 .sidenav p:hover {
   color: #61dafb;
 }
+
+.boxy {
+  background-color: #25393e;
+  opacity: .7;
+  margin-top: 50px;
+  border-color: #2c3334;
+  padding-left: 30px;
+  padding-right: 30px;
+}
