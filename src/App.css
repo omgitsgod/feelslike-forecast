@@ -48,10 +48,15 @@
 }
 
 .boxy {
-  background-color: #25393e;
+  background-color: #282c34;
   opacity: .7;
   margin-top: 50px;
-  border-color: #2c3334;
+  border: 5px solid #25393e;
   padding-left: 30px;
   padding-right: 30px;
+}
+.boxy:hover {
+  background-color: #3e4552;
+  opacity: 1;
+  border: 10px solid #25393e;
 }
