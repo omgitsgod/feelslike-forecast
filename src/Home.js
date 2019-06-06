@@ -5,8 +5,8 @@ import Icon from '@mdi/react'
 import {mdiWeatherHurricane} from '@mdi/js'
 
 
-function Home() {
-
+function Home(props) {
+  console.log(props);
   return (
 
     <div className="Section">
@@ -18,6 +18,7 @@ function Home() {
           spin
         />
         <h1> Welcome! </h1>
+        {props.daily ? <p>{props.daily.summary}</p> : null}
 
       </header>
     </div>

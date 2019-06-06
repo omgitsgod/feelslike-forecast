@@ -3,7 +3,7 @@ import './App.css';
 import Icon from '@mdi/react'
 import {mdiWeatherHurricane} from '@mdi/js'
 
-function Currently() {
+function Currently(props) {
   const [temp, setTemp] = useState(0)
   const [sum, setSum] = useState('')
   const [cloud, setCloud] = useState(0)
@@ -14,24 +14,7 @@ function Currently() {
 
 
 
-  const handleCoords = (coords) => {
-    console.log(coords.coords.latitude,coords.coords.longitude);
-    lat = coords.coords.latitude
-    long = coords.coords.longitude
-  }
-  navigator.geolocation.getCurrentPosition(handleCoords)
 
-  fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_WEATHER_API_KEY}/${lat || 42.3601},${long || -71.0589}`)
-  .then(r => r.json()).then(result => {
-    setResults(result)
-  //  setTemp(result.temperature)
-  //  setSum(result.summary)
-  //  setCloud(result.cloudCover)
-  //  setHumidity(result.humidity)
-  //  setStormDistance(result.nearestStormDistance)
-  }
-  )
-  console.log(results);
   if (results.currently) {
   return (
 
