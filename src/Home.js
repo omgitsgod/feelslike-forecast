@@ -14,11 +14,11 @@ function Home() {
 
         <Icon path={mdiWeatherHurricane}
           size={4}
-          color="white"
+          color="#61dafb"
           spin
         />
         <h1> Welcome! </h1>
-        
+
       </header>
     </div>
 
