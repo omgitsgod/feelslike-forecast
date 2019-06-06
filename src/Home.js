@@ -9,8 +9,8 @@ function Home() {
 
   return (
 
-    <div className="App">
-      <header className="App-header">
+    <div className="Section">
+      <header className="Section-header">
 
         <Icon path={mdiWeatherHurricane}
           size={4}

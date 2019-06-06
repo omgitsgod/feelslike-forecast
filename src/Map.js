@@ -7,8 +7,10 @@ function Map() {
 
   return (
 
-    <div>
-      <h1>Radar Map</h1>
+    <div className="Section">
+      <header className="Section-header">
+        <h1>Radar Map</h1>
+      </header>
     </div>
   )
 

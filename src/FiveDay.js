@@ -7,8 +7,10 @@ function FiveDay() {
 
   return (
 
-    <div>
-      <h1>Five Day Forecast</h1>
+    <div className="Section">
+      <header className="Section-header">
+       <h1>Five Day Forecast</h1>
+      </header>
     </div>
   )
 
