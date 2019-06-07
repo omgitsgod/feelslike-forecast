@@ -29,12 +29,12 @@ function Map() {
   return (
     <div className="hidenav" >
       <header className="Section-header">
-      <Icon path={mdiMenuOpen}
-        size={2}
-        color="#61dafb"
-        horizontal
-        onClick={()=>setOpen(!open)}
-      />
+        <Icon path={mdiMenuOpen}
+          size={2}
+          color="#61dafb"
+          horizontal
+          onClick={()=>setOpen(!open)}
+        />
       </header>
     </div>
   )

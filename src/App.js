@@ -18,11 +18,11 @@ function App() {
   }
   navigator.geolocation.getCurrentPosition(handleCoords)
   useEffect(() => {
-  //  fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_WEATHER_API_KEY}/${lat || 42.3601},${long || -71.0589}`)
-//    .then(r => r.json()).then(result => {
-//      setResults(result)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_WEATHER_API_KEY}/${lat || 42.3601},${long || -71.0589}`)
+    .then(r => r.json()).then(result => {
+      setResults(result)
 
-//    })
+    })
   }, [])
   console.log(results);
   return (
