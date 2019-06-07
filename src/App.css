@@ -18,6 +18,15 @@
   overflow-x: hidden;
   padding-top: 20px;
 }
+.hidenav {
+  height: 100%;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
 .Section-header {
   background-color: #282c34;
