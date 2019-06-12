@@ -71,3 +71,18 @@
   opacity: 1;
   border: 10px solid #25393e;
 }
+@media only screen and (max-width: 600px) {
+  .Section {
+    margin-left: 60px;
+  }
+  .sidenav {
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+}
