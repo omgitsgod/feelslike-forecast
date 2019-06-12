@@ -61,7 +61,7 @@ function Hourly(props) {
       size={defaults.size}
       animate={defaults.animate}
     />
-    <p>Temp: {x.apparentTemperature}</p>
+    <p>{x.apparentTemperature}° F</p>
     <p>{x.summary}</p>
     </div>
   )

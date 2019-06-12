@@ -67,7 +67,7 @@ function Currently(props) {
     <div className="Section">
       <header className="Section-header">
 
-        
+
         <div className="boxy">
         <div className="inner">
         <ReactAnimatedWeather
@@ -78,8 +78,8 @@ function Currently(props) {
         />
         <h1>Right now:</h1>
         <br />
-        <h2>Temp: {props.currently.temperature}</h2>
-        <h3>Summary: {props.currently.summary}</h3>
+        <h2>{props.currently.temperature}° F</h2>
+        <h3>{props.currently.summary}</h3>
         <h3>Cloud Cover: {Math.floor(props.currently.cloudCover * 100)}%</h3>
         <h3>humidity: {Math.floor(props.currently.humidity * 100)}%</h3>
         <h3>Storm Distance: {props.currently.nearestStormDistance} miles away</h3>
