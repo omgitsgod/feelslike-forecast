@@ -62,8 +62,8 @@ function Week(props) {
       size={defaults.size}
       animate={defaults.animate}
     />
-    <p>High: {x.apparentTemperatureHigh}</p>
-    <p>Low: {x.apparentTemperatureLow}</p>
+    <p>High: {x.apparentTemperatureHigh}° F</p>
+    <p>Low: {x.apparentTemperatureLow}° F</p>
     <p>{x.summary}</p>
     </div>
   )
