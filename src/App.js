@@ -24,7 +24,7 @@ function App() {
   //    setResults(result)
 
   //  })
-    fetch('https://feelslike-backend.herokuapp.com/')
+    fetch(`https://feelslike-backend.herokuapp.com/test/${lat || 42.3601}/${long || -71.0589}`)
     .then(r => r.json()).then(setResults)
   }, [])
   console.log(results);
