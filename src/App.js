@@ -16,7 +16,6 @@ function App() {
     lat = coords.coords.latitude
     long = coords.coords.longitude
   }
-  navigator.geolocation.getCurrentPosition(handleCoords)
 
   useEffect(() => {
   //  fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_WEATHER_API_KEY}/${lat || 42.3601},${long || -71.0589}`)
@@ -24,8 +23,14 @@ function App() {
   //    setResults(result)
 
   //  })
-    fetch(`https://feelslike-backend.herokuapp.com/test/${lat || 42.3601}/${long || -71.0589}`)
-    .then(r => r.json()).then(setResults)
+  new Promise((res,rej)=>{
+    navigator.geolocation.getCurrentPosition(handleCoords)
+    console.log("fetching coords");
+    if (lat !== undefined) {
+    res()
+  }
+  }).then(fetch(`https://feelslike-backend.herokuapp.com/test/${lat}/${long}`).then(r => r.json()).then(setResults))
+
   }, [])
   console.log(results);
   return (
