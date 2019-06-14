@@ -23,13 +23,16 @@ function App() {
   //    setResults(result)
 
   //  })
-  new Promise((res,rej)=>{
-    navigator.geolocation.getCurrentPosition(handleCoords)
-    console.log("fetching coords");
-    if (lat !== undefined) {
-    res()
-  }
-  }).then(fetch(`https://feelslike-backend.herokuapp.com/test/${lat}/${long}`).then(r => r.json()).then(setResults))
+  new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject)
+  })
+  .then((position) => {
+    fetch(`https://feelslike-backend.herokuapp.com/test/${position.coords.latitude}/${position.coords.longitude}`).then(r => r.json()).then(setResults)
+  })
+  .catch((err) => {
+    console.error(err.message);
+  });
+
 
   }, [])
   console.log(results);
