@@ -18,7 +18,7 @@ function Home(props) {
           spin
         />
         <h1> Welcome to Feelslike Forecast!</h1>
-        {props.daily ? <p>{props.daily.summary}</p> : <p>loading weather</p>}
+        {props.daily ? <p>{props.daily.summary}</p> : <p>getting your weather...</p>}
 
       </header>
     </div>
