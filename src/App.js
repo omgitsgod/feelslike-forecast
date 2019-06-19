@@ -27,7 +27,7 @@ function App() {
     navigator.geolocation.getCurrentPosition(resolve, reject)
   })
   .then((position) => {
-    fetch(`https://feelslike-backend.herokuapp.com/test/${position.coords.latitude}/${position.coords.longitude}`).then(r => r.json()).then(setResults)
+    fetch(`https://feelslike-backend.herokuapp.com/get/${position.coords.latitude}/${position.coords.longitude}`).then(r => r.json()).then(setResults)
   })
   .catch((err) => {
     console.error(err.message);
