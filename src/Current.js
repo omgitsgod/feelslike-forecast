@@ -76,7 +76,6 @@ function Currently(props) {
           size={defaults.size}
           animate={defaults.animate}
         />
-        <h1>Right now:</h1>
         <br />
         <h2>{props.currently.temperature}° F</h2>
         <h3>{props.currently.summary}</h3>
