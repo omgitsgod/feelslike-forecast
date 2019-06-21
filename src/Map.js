@@ -9,7 +9,7 @@ function Map() {
 
     <div className="Section">
       <header className="Section-header">
-        <h1>Radar Map</h1>
+        <h1>Coming Soon!</h1>
       </header>
     </div>
   )
