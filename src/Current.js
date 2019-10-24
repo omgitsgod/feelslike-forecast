@@ -1,17 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import Icon from '@mdi/react'
-import {mdiWeatherHurricane} from '@mdi/js'
 import ReactAnimatedWeather from 'react-animated-weather';
 
 function Currently(props) {
-  const [temp, setTemp] = useState(0)
-  const [sum, setSum] = useState('')
-  const [cloud, setCloud] = useState(0)
-  const [humidity, setHumidity] = useState(0)
-  const [stormDistance, setStormDistance] = useState(0)
-  const [results, setResults] = useState({})
-  let lat, long
   let icon
   if (props.currently) {
     console.log(props.currently.icon)
