@@ -66,7 +66,7 @@ function Week(props) {
       <div className="Section">
         <header className="Section-header">
           <div className="boxy">
-            <Graph data={props.daily.data.map(x => x.precipProbability)} label='Precipitation' type='bar' x={dayList}/>
+            <Graph data={props.daily.data.map(x => x.precipProbability * 100)} label='Precipitation' type='bar' x={dayList}/>
           </div>
           {daily}
         </header>
