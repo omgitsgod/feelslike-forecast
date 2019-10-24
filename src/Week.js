@@ -8,6 +8,7 @@ function Week(props) {
   let key = 0
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   let day = new Date().getDay()
+  const dayList = days.slice(day-1).slice(0, 8)
   const setIcon = (x) => {
     switch(x) {
       case 'clear-day':
@@ -65,7 +66,7 @@ function Week(props) {
       <div className="Section">
         <header className="Section-header">
           <div className="boxy">
-            <Graph data={props.daily.data.map(x => x.precipProbability)} label='Precipitation' type='bar'/>
+            <Graph data={props.daily.data.map(x => x.precipProbability)} label='Precipitation' type='bar' x={dayList}/>
           </div>
           {daily}
         </header>

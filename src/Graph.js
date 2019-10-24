@@ -10,7 +10,7 @@ function Graph(props) {
     new Chart(myChartRef, {
       type: props.type,
       data: {
-        labels: Array.from({length: props.data.length}, (x,i) => i),
+        labels: props.x,
         datasets: [
           {
             label: props.label,

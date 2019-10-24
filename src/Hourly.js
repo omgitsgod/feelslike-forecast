@@ -63,7 +63,7 @@ function Hourly(props) {
       <div className="Section">
         <header className="Section-header">
           <div className="boxy">
-            <Graph data={props.hourly.data.slice(0,25).map(x => x.apparentTemperature)} label='Temperature' type='line'/>
+            <Graph data={props.hourly.data.slice(0,25).map(x => x.apparentTemperature)} label='Temperature' type='line' x={Array.from({length: 25}, (x,i) => i)}/>
           </div>
           {hours}
         </header>
