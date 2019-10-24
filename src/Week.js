@@ -5,6 +5,7 @@ import Graph from './Graph'
 
 function Week(props) {
   let daily
+  let key = 0
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   let day = new Date().getDay()
   const setIcon = (x) => {
@@ -42,7 +43,7 @@ function Week(props) {
     daily = props.daily.data.map(x => {
 
     return (
-    <div className="boxy">
+    <div key={key++}className="boxy" >
     <h5>{days[day++]}</h5>
     <ReactAnimatedWeather
       icon={setIcon(x.icon)}
@@ -64,7 +65,7 @@ function Week(props) {
       <div className="Section">
         <header className="Section-header">
           <div className="boxy">
-            <Graph data={props.daily.data.map(x => x.apparentTemperatureHigh)} data2={props.daily.data.map(x => x.apparentTemperatureLow)} type='High/Low'/>
+            <Graph data={props.daily.data.map(x => x.precipProbability)} type='Precipitation'/>
           </div>
           {daily}
         </header>

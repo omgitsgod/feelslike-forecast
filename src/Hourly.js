@@ -6,6 +6,7 @@ import Graph from './Graph'
 function Hourly(props) {
   let hours
   let hour = 0
+  let key = 0
   const setIcon = (x) => {
     switch(x) {
       case 'clear-day':
@@ -41,7 +42,7 @@ function Hourly(props) {
     hours = props.hourly.data.slice(0,25).map(x => {
 
     return (
-    <div className="boxy">
+    <div key={key++} className="boxy">
     <h5>{hour++} hour(s) from now</h5>
     <ReactAnimatedWeather
       icon={setIcon(x.icon)}
