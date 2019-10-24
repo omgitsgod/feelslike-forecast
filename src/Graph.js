@@ -3,7 +3,7 @@ import Chart from 'chart.js';
 
 function Graph(props) {
   const chartRef = useRef(null)
-
+  Chart.defaults.global.defaultFontColor = 'white';
   useEffect(()=>{
     const myChartRef = chartRef.current.getContext('2d');
 
@@ -15,6 +15,12 @@ function Graph(props) {
           {
             label: props.label,
             data: props.data,
+            //borderColor: '#98B9AB',
+            borderColor: '#61dafb',
+            backgroundColor: '#61dafb',
+            fill: false,
+            options: {
+            }
           }
         ]
       }
