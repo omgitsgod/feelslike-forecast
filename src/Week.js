@@ -3,6 +3,7 @@ import './App.css';
 import Icon from '@mdi/react'
 import {mdiWeatherHurricane} from '@mdi/js'
 import ReactAnimatedWeather from 'react-animated-weather';
+import Graph from './Graph'
 
 function Week(props) {
   let daily
@@ -75,6 +76,9 @@ function Week(props) {
 
       <div className="Section">
         <header className="Section-header">
+          <div className="boxy">
+            <Graph data={props.daily.data.map(x => x.apparentTemperatureHigh)} data2={props.daily.data.map(x => x.apparentTemperatureLow)} type='High/Low'/>
+          </div>
           {daily}
         </header>
       </div>

@@ -3,6 +3,7 @@ import './App.css';
 import Icon from '@mdi/react'
 import {mdiWeatherHurricane} from '@mdi/js'
 import ReactAnimatedWeather from 'react-animated-weather';
+import Graph from './Graph'
 
 function Hourly(props) {
   let hours
@@ -50,7 +51,7 @@ function Hourly(props) {
     animate: true
   };
   if (props.hourly) {
-    hours = props.hourly.data.map(x => {
+    hours = props.hourly.data.slice(0,25).map(x => {
 
     return (
     <div className="boxy">
@@ -73,6 +74,9 @@ function Hourly(props) {
 
       <div className="Section">
         <header className="Section-header">
+          <div className="boxy">
+            <Graph data={props.hourly.data.slice(0,25).map(x => x.apparentTemperature)} type='Temperature'/>
+          </div>
           {hours}
         </header>
       </div>
