@@ -8,12 +8,12 @@ function Graph(props) {
     const myChartRef = chartRef.current.getContext('2d');
 
     new Chart(myChartRef, {
-      type: 'line',
+      type: props.type,
       data: {
         labels: Array.from({length: props.data.length}, (x,i) => i),
         datasets: [
           {
-            label: props.type,
+            label: props.label,
             data: props.data,
           }
         ]
