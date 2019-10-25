@@ -1,0 +1,9 @@
+#myChart {
+  min-height: 350px;
+}
+
+@media only screen and (max-width: 600px) {
+  #myChart {
+    min-height: 275px;
+  }
+}

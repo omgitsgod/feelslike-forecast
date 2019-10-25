@@ -1,4 +1,5 @@
 import React, {useRef, useEffect} from 'react';
+import './css/Graph.css'
 import Chart from 'chart.js';
 
 function Graph(props) {
@@ -9,6 +10,10 @@ function Graph(props) {
 
     new Chart(myChartRef, {
       type: props.type,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
       data: {
         labels: props.x,
         datasets: [
@@ -19,8 +24,6 @@ function Graph(props) {
             borderColor: '#61dafb',
             backgroundColor: '#61dafb',
             fill: false,
-            options: {
-            }
           }
         ]
       }
