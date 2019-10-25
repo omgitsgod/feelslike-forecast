@@ -99,13 +99,14 @@ svg {
   }
 
   .graph-week {
-    height: 40vh;
-    margin-top: 20px;
+    height: 35vh;
+    margin-top: 15px;
     width: 200px;
   }
 
   .boxy-week {
     height: 45vh;
+    margin-top: 25px;
     width: 120px;
   }
 

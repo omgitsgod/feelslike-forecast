@@ -4,6 +4,6 @@
 
 @media only screen and (max-width: 600px) {
   #myChart {
-    min-height: 275px;
+    min-height: 250px;
   }
 }
