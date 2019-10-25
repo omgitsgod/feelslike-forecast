@@ -1,14 +1,35 @@
-import React from 'react';
-import './App.css';
+import React, {useState} from 'react';
+import './css/Week.css';
 import ReactAnimatedWeather from 'react-animated-weather';
+import Icon from '@mdi/react'
+import {mdiArrowRightCircle,mdiArrowLeftCircle} from '@mdi/js'
 import Graph from './Graph'
 
 function Week(props) {
+  const [index, setIndex] = useState(0)
   let daily
   let key = 0
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   let day = new Date().getDay()
-  const dayList = days.slice(day-1).slice(0, 8)
+
+  const dayList = days.slice(day).slice(0, 7)
+
+  const turnRight = () => {
+    if (index === dayList.length - 1) {
+      setIndex(0)
+    } else {
+      setIndex(index + 1)
+    }
+  }
+
+  const turnLeft = () => {
+    if (index === 0) {
+      setIndex(dayList.length - 1)
+    } else {
+      setIndex(index -1)
+    }
+  }
+
   const setIcon = (x) => {
     switch(x) {
       case 'clear-day':
@@ -37,24 +58,30 @@ function Week(props) {
   }
   const defaults = {
     color: '#61dafb',
-    size: 50,
     animate: true
   };
+
   if (props.daily) {
     daily = props.daily.data.map(x => {
-
     return (
-    <div key={key++}className="boxy" >
-    <h5>{days[day++]}</h5>
-    <ReactAnimatedWeather
-      icon={setIcon(x.icon)}
-      color={defaults.color}
-      size={defaults.size}
-      animate={defaults.animate}
-    />
-    <p>High: {x.apparentTemperatureHigh}° F</p>
-    <p>Low: {x.apparentTemperatureLow}° F</p>
-    <p>{x.summary}</p>
+    <div key={key++} className="boxy-week">
+      <h5>{days[day++]}</h5>
+      <div className='icon'>
+        <ReactAnimatedWeather
+          icon={setIcon(x.icon)}
+          color={defaults.color}
+          animate={defaults.animate}
+          className='icony'
+        />
+      </div>
+      <div className='week-text'>
+        <p>High: {x.apparentTemperatureHigh}° F</p>
+        <p>Low: {x.apparentTemperatureLow}° F</p>
+      </div>
+      <br />
+      <div className='summary'>
+        <p>{x.summary}</p>
+      </div>
     </div>
   )
   })
@@ -62,23 +89,34 @@ function Week(props) {
   console.log(props);
   if (props.daily) {
     return (
-
       <div className="Section">
-        <header className="Section-header">
-          <div className="boxy">
+        <div className="Section-div">
+          <div className="graph-week">
             <Graph data={props.daily.data.map(x => x.precipProbability * 100)} label='Precipitation' type='bar' x={dayList}/>
           </div>
-          {daily}
-        </header>
+          <div className='content'>
+            <div className='arrow left'>
+            <Icon path={mdiArrowLeftCircle}
+              color="#61dafb"
+              onClick={turnLeft}
+            />
+            </div>
+            <div className='items'>
+              {daily[index]}
+            </div>
+            <div className='arrow right'>
+              <Icon path={mdiArrowRightCircle}
+                color="#61dafb"
+                onClick={turnRight}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   } else {
     return (
-      <div className="App">
-        <header className="App-header">
       <p>loading...</p>
-      </header>
-      </div>
     )
   }
 }

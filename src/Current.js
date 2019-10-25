@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/Current.css';
 import ReactAnimatedWeather from 'react-animated-weather';
 
 function Currently(props) {
@@ -56,10 +56,10 @@ function Currently(props) {
   return (
 
     <div className="Section">
-      <header className="Section-header">
+      <div className="Section-div">
 
 
-        <div className="boxy">
+        <div className="boxy-current">
         <div className="inner">
         <ReactAnimatedWeather
           icon={defaults.icon}
@@ -75,16 +75,12 @@ function Currently(props) {
         <h3>Storm Distance: {props.currently.nearestStormDistance} miles away</h3>
         </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 } else {
   return (
-    <div className="App">
-      <header className="App-header">
     <p>loading...</p>
-    </header>
-    </div>
   )
 }
 }

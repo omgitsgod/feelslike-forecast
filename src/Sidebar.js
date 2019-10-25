@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom'
-import './App.css';
+import './css/Sidebar.css';
 import Icon from '@mdi/react'
 import {mdiMenuOpen} from '@mdi/js'
 
-function Map() {
+function Sidebar() {
 
   const [open, setOpen] = useState(true)
   if (open) {
   return (
 
     <div className="sidenav" >
-    <header className="Section-header">
+    <div className="Section-div">
       <Link to='/' className="navy" style={{ textDecoration: 'none', color: 'white'}}><p>Home</p></Link>
       <Link to='/current' className="navy" style={{ textDecoration: 'none', color: 'white'}}><p>Current</p></Link>
       <Link to='/hourly' className="navy" style={{ textDecoration: 'none', color: 'white'}}><p>Hourly</p></Link>
@@ -22,23 +22,23 @@ function Map() {
         color="#61dafb"
         onClick={()=>setOpen(!open)}
       />
-    </header>
+    </div>
     </div>
   )
 } else {
   return (
     <div className="hidenav" >
-      <header className="Section-header">
+      <div className="Section-div">
         <Icon path={mdiMenuOpen}
           size={2}
           color="#61dafb"
           horizontal
           onClick={()=>setOpen(!open)}
         />
-      </header>
+      </div>
     </div>
   )
 }
 }
 
-export default Map;
+export default Sidebar;

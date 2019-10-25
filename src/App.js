@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
+import './css/App.css';
 import { Route  } from 'react-router-dom'
 import Home from './Home'
 import Sidebar from './Sidebar'
@@ -10,7 +10,7 @@ import Map from './Map'
 
 function App() {
   const [results, setResults] = useState({})
-  
+
   useEffect(() => {
   new Promise(function (resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject)
@@ -24,14 +24,14 @@ function App() {
   }, [])
   console.log(results);
   return (
-    <header className="Section-header">
+    <div className="Section-div">
       <Sidebar />
       <Route exact path="/" render={(props)=><Home {...props} daily={results.daily}/>}/>
       <Route exact path="/current" render={(props)=><Current {...props} currently={results.currently}/>}/>
       <Route exact path="/hourly" render={(props)=><Hourly {...props} hourly={results.hourly}/>}/>
       <Route exact path="/week" render={(props)=><Week {...props} daily={results.daily}/>}/>
       <Route exact path ="/map" component={Map} />
-    </header>
+    </div>
   )
 }
 

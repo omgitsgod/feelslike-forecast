@@ -1,12 +1,32 @@
-import React from 'react';
-import './App.css';
+import React, {useState} from 'react';
+import './css/Hourly.css';
 import ReactAnimatedWeather from 'react-animated-weather';
+import Icon from '@mdi/react'
+import {mdiArrowRightCircle,mdiArrowLeftCircle} from '@mdi/js'
 import Graph from './Graph'
 
 function Hourly(props) {
+  const [index, setIndex] = useState(0)
   let hours
   let hour = 0
   let key = 0
+
+  const turnRight = () => {
+    if (index === 24) {
+      setIndex(0)
+    } else {
+      setIndex(index + 1)
+    }
+  }
+
+  const turnLeft = () => {
+    if (index === 0) {
+      setIndex(24)
+    } else {
+      setIndex(index -1)
+    }
+  }
+
   const setIcon = (x) => {
     switch(x) {
       case 'clear-day':
@@ -38,20 +58,20 @@ function Hourly(props) {
     size: 50,
     animate: true
   };
+
   if (props.hourly) {
     hours = props.hourly.data.slice(0,25).map(x => {
-
     return (
-    <div key={key++} className="boxy">
-    <h5>{hour++} hour(s) from now</h5>
-    <ReactAnimatedWeather
-      icon={setIcon(x.icon)}
-      color={defaults.color}
-      size={defaults.size}
-      animate={defaults.animate}
-    />
-    <p>{x.apparentTemperature}° F</p>
-    <p>{x.summary}</p>
+    <div key={key++} className="boxy-hourly">
+      <h5>{hour++} hour(s) from now</h5>
+      <ReactAnimatedWeather
+        icon={setIcon(x.icon)}
+        color={defaults.color}
+        size={defaults.size}
+        animate={defaults.animate}
+      />
+      <p>{x.apparentTemperature}° F</p>
+      <p>{x.summary}</p>
     </div>
   )
   })
@@ -59,23 +79,34 @@ function Hourly(props) {
 
   if (props.hourly) {
     return (
-
       <div className="Section">
-        <header className="Section-header">
-          <div className="boxy">
+        <div className="Section-div">
+          <div className="graph-hourly">
             <Graph data={props.hourly.data.slice(0,25).map(x => x.apparentTemperature)} label='Temperature' type='line' x={Array.from({length: 25}, (x,i) => i)}/>
           </div>
-          {hours}
-        </header>
+          <div className='content'>
+            <div className='arrow left'>
+              <Icon path={mdiArrowLeftCircle}
+                color="#61dafb"
+                onClick={turnLeft}
+              />
+            </div>
+            <div className='items'>
+              {hours[index]}
+            </div>
+            <div className='arrow right'>
+              <Icon path={mdiArrowRightCircle}
+                color="#61dafb"
+                onClick={turnRight}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   } else {
     return (
-      <div className="App">
-        <header className="App-header">
       <p>loading...</p>
-      </header>
-      </div>
     )
   }
 

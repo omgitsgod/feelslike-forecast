@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/Home.css';
 import Icon from '@mdi/react'
 import {mdiWeatherHurricane} from '@mdi/js'
 
@@ -9,7 +9,7 @@ function Home(props) {
   return (
 
     <div className="Section">
-      <header className="Section-header">
+      <div className="Section-div">
 
         <Icon path={mdiWeatherHurricane}
           size={4}
@@ -19,7 +19,7 @@ function Home(props) {
         <h1> Welcome to Feelslike Forecast!</h1>
         {props.daily ? <p>{props.daily.summary}</p> : <p className="loading">getting your weather</p>}
 
-      </header>
+      </div>
     </div>
 
   )

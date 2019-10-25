@@ -1,0 +1,43 @@
+.Section {
+  margin-left: 160px;
+  padding: 0px 10px;
+  text-align: center;
+}
+
+.Section-div {
+  align-items: center;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.boxy-current {
+  background-color: #282c34;
+  border: 5px solid #25393e;
+  border-radius: 25px;
+  margin-top: 50px;
+  opacity: .7;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 500px;
+}
+
+.boxy-current:hover {
+  background-color: #3e4552;
+  border: 10px solid #25393e;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .Section {
+    margin-left: 60px;
+  }
+
+  .boxy-current {
+    width: 150px;
+  }
+}
