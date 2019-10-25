@@ -13,12 +13,12 @@
   padding-right: 30px;
   width: 330px;
 }
-.boxy-hourly:hover {
+/* .boxy-hourly:hover {
   background-color: #3e4552;
   border: 10px solid #25393e;
   opacity: 1;
 }
-
+*/
 .content {
   float: left;
 }
@@ -82,12 +82,11 @@ svg {
 
   .graph-hourly {
     height: 40vh;
-    margin-top: 5px;
     width: 200px;
   }
 
   .boxy-hourly {
     width: 100px;
-    margin-top: 25px;
+    margin-top: 15px;
   }
 }

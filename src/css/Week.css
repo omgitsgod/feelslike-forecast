@@ -27,12 +27,12 @@
   width: 330px;
 }
 
-.boxy-week:hover {
+/*.boxy-week:hover {
   background-color: #3e4552;
   border: 10px solid #25393e;
   opacity: 1;
 }
-
+*/
 .icon {
   float: left;
 }
@@ -100,13 +100,12 @@ svg {
 
   .graph-week {
     height: 35vh;
-    margin-top: 15px;
     width: 200px;
   }
 
   .boxy-week {
     height: 45vh;
-    margin-top: 25px;
+    margin-top: 15px;
     width: 120px;
   }
 
