@@ -13,6 +13,7 @@ function Week(props) {
   let day = new Date().getDay()
 
   const dayList = days.slice(day).slice(0, 7)
+  dayList[0] = "Today"
 
   const turnRight = () => {
     if (index === dayList.length - 1) {
@@ -62,10 +63,11 @@ function Week(props) {
   };
 
   if (props.daily) {
+    let ind = 0
     daily = props.daily.data.map(x => {
     return (
     <div key={key++} className="boxy-week">
-      <h5>{days[day++]}</h5>
+      <h5>{dayList[ind++]}</h5>
       <div className='icon'>
         <ReactAnimatedWeather
           icon={setIcon(x.icon)}
