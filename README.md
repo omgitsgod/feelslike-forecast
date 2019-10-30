@@ -1,4 +1,4 @@
-# Welcome to Feelslike Forecast 👋
+# Welcome to Feelslike Forecast
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/omgitsgod/feelslike-forecast/blob/master/LICENSE)
 
