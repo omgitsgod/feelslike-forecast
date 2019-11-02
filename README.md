@@ -10,20 +10,50 @@
 
 ## Install
 
+Yarn:
 ```sh
 yarn install
 ```
 
+NPM:
+```sh
+npm install
+```
+
 ## Usage
 
+Yarn:
 ```sh
 yarn start
 ```
 
+NPM:
+```sh
+npm start
+```
+
 ## Run tests
 
+Yarn:
 ```sh
 yarn test
+```
+
+NPM:
+```sh
+npm test
+```
+
+## Build
+
+Yarn:
+```sh
+yarn build
+```
+
+NPM:
+```sh
+npm build
 ```
 
 ## Contributing to Feelslike Forecast
