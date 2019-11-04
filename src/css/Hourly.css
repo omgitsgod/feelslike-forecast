@@ -12,6 +12,8 @@
   padding-left: 30px;
   padding-right: 30px;
   width: 330px;
+  flex-shrink: 0;
+  margin-left: 10px;
 }
 /* .boxy-hourly:hover {
   background-color: #3e4552;
@@ -36,6 +38,9 @@
 
 .items {
   float: left;
+  display: flex;
+  overflow-x: scroll;
+  width: 70vw;
 }
 
 .Section {

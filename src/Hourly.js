@@ -6,26 +6,10 @@ import {mdiArrowRightCircle,mdiArrowLeftCircle} from '@mdi/js'
 import Graph from './Graph'
 
 function Hourly(props) {
-  const [index, setIndex] = useState(0)
   let hours
   let hour = 0
   let key = 0
 
-  const turnRight = () => {
-    if (index === 24) {
-      setIndex(0)
-    } else {
-      setIndex(index + 1)
-    }
-  }
-
-  const turnLeft = () => {
-    if (index === 0) {
-      setIndex(24)
-    } else {
-      setIndex(index -1)
-    }
-  }
 
   const setIcon = (x) => {
     switch(x) {
@@ -85,20 +69,8 @@ function Hourly(props) {
             <Graph data={props.hourly.data.slice(0,25).map(x => x.apparentTemperature)} label='Temperature' type='line' x={Array.from({length: 25}, (x,i) => i)}/>
           </div>
           <div className='content'>
-            <div className='arrow left'>
-              <Icon path={mdiArrowLeftCircle}
-                color="#61dafb"
-                onClick={turnLeft}
-              />
-            </div>
             <div className='items'>
-              {hours[index]}
-            </div>
-            <div className='arrow right'>
-              <Icon path={mdiArrowRightCircle}
-                color="#61dafb"
-                onClick={turnRight}
-              />
+              {hours}
             </div>
           </div>
         </div>
