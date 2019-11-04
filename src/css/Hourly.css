@@ -73,6 +73,11 @@ svg {
   width: 75px;
 }
 
+.hourly-summary {
+  margin-top: -2vh;
+  font-size: 3vh;
+}
+
 @media only screen and (max-width: 600px) {
   .Section {
     margin-left: 60px;
