@@ -52,7 +52,7 @@ function Week(props) {
     let ind = 0
     daily = props.daily.data.slice(0,7).map((x, y) => {
     return (
-    <div key={key++} className={y === selected ? "selected" : "boxy-week"} onClick={() => choice(y)} onMouseEnter={() => {choice(y)}}>
+    <div key={key++} className={y === selected ? "selected-week" : "boxy-week"} onClick={() => choice(y)} onMouseEnter={() => {choice(y)}}>
       <h5>{dayList[ind++]}</h5>
       <div className='icon'>
         <ReactAnimatedWeather

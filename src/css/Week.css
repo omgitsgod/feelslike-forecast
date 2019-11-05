@@ -91,7 +91,7 @@ svg {
   width: 75px;
 }
 
-.selected {
+.selected-week {
   background-color: #282c34;
   border: 5px solid #61dafb;
   border-radius: 25px;
@@ -124,7 +124,7 @@ svg {
   }
 
   .boxy-week {
-    height: 45vh;
+    height: 50vh;
     margin-top: 15px;
     width: 120px;
   }
@@ -137,7 +137,7 @@ svg {
     font-size: 2.5vh;
   }
 
-  .selected {
+  .selected-week {
     height: 45vh;
     margin-top: 15px;
     width: 120px;
