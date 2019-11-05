@@ -136,4 +136,10 @@ svg {
   .week-text {
     font-size: 2.5vh;
   }
+
+  .selected {
+    height: 45vh;
+    margin-top: 15px;
+    width: 120px;
+  }
 }

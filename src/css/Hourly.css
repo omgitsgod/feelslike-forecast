@@ -114,4 +114,9 @@ svg {
     width: 100px;
     margin-top: 15px;
   }
+
+  .selected {
+    width: 100px;
+    margin-top: 15px;
+  }
 }
