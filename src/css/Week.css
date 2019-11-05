@@ -25,6 +25,9 @@
   padding-left: 30px;
   padding-right: 30px;
   width: 330px;
+  width: 330px;
+  flex-shrink: 0;
+  margin-left: 10px;
 }
 
 /*.boxy-week:hover {
@@ -69,6 +72,9 @@
 
 .items {
   float: left;
+  display: flex;
+  overflow-x: scroll;
+  width: 70vw;
 }
 
 .left {

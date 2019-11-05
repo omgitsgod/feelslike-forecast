@@ -6,7 +6,6 @@ import {mdiArrowRightCircle,mdiArrowLeftCircle} from '@mdi/js'
 import Graph from './Graph'
 
 function Week(props) {
-  const [index, setIndex] = useState(0)
   let daily
   let key = 0
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -14,22 +13,6 @@ function Week(props) {
 
   const dayList = days.slice(day).slice(0, 7)
   dayList[0] = "Today"
-
-  const turnRight = () => {
-    if (index === dayList.length - 1) {
-      setIndex(0)
-    } else {
-      setIndex(index + 1)
-    }
-  }
-
-  const turnLeft = () => {
-    if (index === 0) {
-      setIndex(dayList.length - 1)
-    } else {
-      setIndex(index -1)
-    }
-  }
 
   const setIcon = (x) => {
     switch(x) {
@@ -97,20 +80,8 @@ function Week(props) {
             <Graph data={props.daily.data.map(x => x.precipProbability * 100)} label='Precipitation' type='bar' x={dayList}/>
           </div>
           <div className='content'>
-            <div className='arrow left'>
-            <Icon path={mdiArrowLeftCircle}
-              color="#61dafb"
-              onClick={turnLeft}
-            />
-            </div>
             <div className='items'>
-              {daily[index]}
-            </div>
-            <div className='arrow right'>
-              <Icon path={mdiArrowRightCircle}
-                color="#61dafb"
-                onClick={turnRight}
-              />
+              {daily}
             </div>
           </div>
         </div>
