@@ -121,6 +121,7 @@ svg {
   .graph-week {
     height: 35vh;
     width: 200px;
+    margin-top: 5px;
   }
 
   .boxy-week {
@@ -138,7 +139,7 @@ svg {
   }
 
   .selected-week {
-    height: 45vh;
+    height: 50vh;
     margin-top: 15px;
     width: 120px;
   }
