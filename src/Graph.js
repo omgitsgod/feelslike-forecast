@@ -3,12 +3,12 @@ import './css/Graph.css'
 import Chart from 'chart.js';
 
 function Graph(props) {
-  const pointBackgroundColors = []
-  const radiusArr = []
   const chartRef = useRef(null)
   Chart.defaults.global.defaultFontColor = 'white';
   useEffect(()=>{
-    const myChartRef = chartRef.current.getContext('2d');
+   const myChartRef = chartRef.current.getContext('2d');
+   const pointBackgroundColors = []
+   const radiusArr = []
 
    const x = new Chart(myChartRef, {
       type: props.type,
@@ -33,7 +33,6 @@ function Graph(props) {
         ]
       }
     })
-  console.log(x.config.data);
   for (let i = 0; i < x.data.datasets[0].data.length; i++) {
     if (i === props.selected) {
         pointBackgroundColors.push("#61dafb");
@@ -43,10 +42,8 @@ function Graph(props) {
         radiusArr.push(2)
     }
   }
-  console.log(pointBackgroundColors);
-//  x.config.data.datasets[0]['pointBackgroundColor'] = 'red';
   x.update()
-}, [props.selected])
+}, [props.selected, props.data, props.label, props.type, props.x])
 
 
   return (

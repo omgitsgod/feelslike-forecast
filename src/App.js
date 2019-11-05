@@ -22,7 +22,6 @@ function App() {
     console.error(err.message);
   });
   }, [])
-  console.log(results);
   return (
     <div className="Section-div">
       <Sidebar />

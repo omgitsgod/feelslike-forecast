@@ -5,7 +5,6 @@ import ReactAnimatedWeather from 'react-animated-weather';
 function Currently(props) {
   let icon
   if (props.currently) {
-    console.log(props.currently.icon)
     switch(props.currently.icon) {
       case 'clear-day':
       icon='CLEAR_DAY'

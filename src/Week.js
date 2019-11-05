@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import './css/Week.css';
 import ReactAnimatedWeather from 'react-animated-weather';
-import Icon from '@mdi/react'
-import {mdiArrowRightCircle,mdiArrowLeftCircle} from '@mdi/js'
 import Graph from './Graph'
 
 function Week(props) {
@@ -17,8 +15,6 @@ function Week(props) {
 
   const choice = (index) => {
     setSelected(index)
-    console.log(props.daily.data[index]);
-    console.log(index);
   }
 
   const setIcon = (x) => {
@@ -78,7 +74,6 @@ function Week(props) {
   )
   })
   }
-  console.log(props);
   if (props.daily) {
     return (
       <div className="Section">

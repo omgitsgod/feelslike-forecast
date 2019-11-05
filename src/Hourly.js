@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import './css/Hourly.css';
 import ReactAnimatedWeather from 'react-animated-weather';
-import Icon from '@mdi/react'
-import {mdiArrowRightCircle,mdiArrowLeftCircle} from '@mdi/js'
 import Graph from './Graph'
 
 function Hourly(props) {
@@ -13,8 +11,6 @@ function Hourly(props) {
 
   const choice = (index) => {
     setSelected(index)
-    console.log(props.hourly.data[index]);
-    console.log(hours.map(x => x.props));
   }
 
 

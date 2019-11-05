@@ -5,7 +5,6 @@ import {mdiWeatherHurricane} from '@mdi/js'
 
 
 function Home(props) {
-  console.log(props);
   return (
 
     <div className="Section">
