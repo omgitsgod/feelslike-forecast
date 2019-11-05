@@ -4,6 +4,7 @@ import Chart from 'chart.js';
 
 function Graph(props) {
   const pointBackgroundColors = []
+  const radiusArr = []
   const chartRef = useRef(null)
   Chart.defaults.global.defaultFontColor = 'white';
   useEffect(()=>{
@@ -22,12 +23,12 @@ function Graph(props) {
           {
             label: props.label,
             data: props.data,
-            //borderColor: '#98B9AB',
             borderColor: '#61dafb',
-          //  backgroundColor: '#61dafb',
+            backgroundColor: pointBackgroundColors,
+            radius: radiusArr,
             pointHoverRadius: 10,
             pointBackgroundColor: pointBackgroundColors,
-            fill: true,
+            fill: false,
           }
         ]
       }
@@ -35,9 +36,11 @@ function Graph(props) {
   console.log(x.config.data);
   for (let i = 0; i < x.data.datasets[0].data.length; i++) {
     if (i === props.selected) {
-        pointBackgroundColors.push("red");
-    } else {
         pointBackgroundColors.push("#61dafb");
+        radiusArr.push(5)
+    } else {
+        pointBackgroundColors.push("#25393e");
+        radiusArr.push(2)
     }
   }
   console.log(pointBackgroundColors);

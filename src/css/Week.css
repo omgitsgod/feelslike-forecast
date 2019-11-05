@@ -91,6 +91,20 @@ svg {
   width: 75px;
 }
 
+.selected {
+  background-color: #282c34;
+  border: 5px solid #61dafb;
+  border-radius: 25px;
+  height: 35vh;
+  margin-top: 50px;
+  opacity: .7;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 330px;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
 @media only screen and (max-width: 600px) {
   .Section {
     margin-left: 60px;

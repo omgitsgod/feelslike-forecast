@@ -6,6 +6,7 @@ import {mdiArrowRightCircle,mdiArrowLeftCircle} from '@mdi/js'
 import Graph from './Graph'
 
 function Week(props) {
+  const [selected, setSelected] = useState(0)
   let daily
   let key = 0
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -13,6 +14,12 @@ function Week(props) {
 
   const dayList = days.slice(day).slice(0, 7)
   dayList[0] = "Today"
+
+  const choice = (index) => {
+    setSelected(index)
+    console.log(props.daily.data[index]);
+    console.log(index);
+  }
 
   const setIcon = (x) => {
     switch(x) {
@@ -47,9 +54,9 @@ function Week(props) {
 
   if (props.daily) {
     let ind = 0
-    daily = props.daily.data.map(x => {
+    daily = props.daily.data.slice(0,7).map((x, y) => {
     return (
-    <div key={key++} className="boxy-week">
+    <div key={key++} className={y === selected ? "selected" : "boxy-week"} onClick={() => choice(y)} onMouseEnter={() => {choice(y)}}>
       <h5>{dayList[ind++]}</h5>
       <div className='icon'>
         <ReactAnimatedWeather
@@ -77,7 +84,7 @@ function Week(props) {
       <div className="Section">
         <div className="Section-div">
           <div className="graph-week">
-            <Graph data={props.daily.data.map(x => x.precipProbability * 100)} label='Precipitation' type='bar' x={dayList}/>
+            <Graph data={props.daily.data.slice(0,7).map(x => x.precipProbability * 100)} selected={selected} label='Precipitation' type='bar' x={dayList}/>
           </div>
           <div className='content'>
             <div className='items'>
