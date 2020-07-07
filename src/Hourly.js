@@ -1,20 +1,44 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './css/Hourly.css';
 import ReactAnimatedWeather from 'react-animated-weather';
-import Graph from './Graph'
+import Graph from './Graph';
+
 
 function Hourly(props) {
-  const [selected, setSelected] = useState(0)
-  let hours
-  let hour = 0
-  let key = 0
+
+  const [selected, setSelected] = useState(0);
+  const { hourly } = props;
+  const defaults = {
+    color: '#61dafb',
+    size: 50,
+    animate: true
+  };
+  const hours = hourly.data.slice(0, 25)
+  const hourCards= hourly ? hours.map((x, y) => (
+    <div key={key++} className={y === selected ? "selected" : "boxy-hourly"} onClick={() => choice(y)} onMouseEnter={() => choice(y)}>
+      <h5>{hour++} hour(s) from now</h5>
+      <ReactAnimatedWeather
+        icon={setIcon(x.icon)}
+        color={defaults.color}
+        size={defaults.size}
+        animate={defaults.animate}
+      />
+      <p>{x.apparentTemperature}° F</p>
+      <p className='hourly-summary'>{x.summary}</p>
+    </div>
+    )
+  ) : null
+  let hour = 0;
+  let key = 0;
 
   const choice = (index) => {
+
     setSelected(index)
   }
 
 
   const setIcon = (x) => {
+
     switch(x) {
       case 'clear-day':
       return 'CLEAR_DAY'
@@ -40,41 +64,17 @@ function Hourly(props) {
       return 'CLEAR_DAY'
     }
   }
-  const defaults = {
-    color: '#61dafb',
-    size: 50,
-    animate: true
-  };
 
-  if (props.hourly) {
-    let temp = props.hourly.data.slice(0,25)
-    hours = temp.map((x, y) => {
-    return (
-    <div key={key++} className={y === selected ? "selected" : "boxy-hourly"} onClick={() => choice(y)} onMouseEnter={() => choice(y)}>
-      <h5>{hour++} hour(s) from now</h5>
-      <ReactAnimatedWeather
-        icon={setIcon(x.icon)}
-        color={defaults.color}
-        size={defaults.size}
-        animate={defaults.animate}
-      />
-      <p>{x.apparentTemperature}° F</p>
-      <p className='hourly-summary'>{x.summary}</p>
-    </div>
-  )
-  })
- }
-
-  if (props.hourly) {
+  if (hourly) {
     return (
       <div className="Section">
         <div className="Section-div">
           <div className="graph-hourly">
-            <Graph data={props.hourly.data.slice(0,25).map(x => x.apparentTemperature)} selected={selected} label='Temperature' type='line' x={Array.from({length: 25}, (x,i) => i)}/>
+            <Graph data={hours.map(x => x.apparentTemperature)} selected={selected} label='Temperature' type='line' x={Array.from({length: 25}, (x,i) => i)}/>
           </div>
           <div className='content'>
             <div className='items'>
-              {hours}
+              {hourCards}
             </div>
           </div>
         </div>
@@ -85,7 +85,6 @@ function Hourly(props) {
       <p>loading...</p>
     )
   }
-
 }
 
 export default Hourly;
