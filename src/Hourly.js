@@ -13,12 +13,14 @@ function Hourly(props) {
     size: 50,
     animate: true
   };
-  const hours = hourly.data.slice(0, 25)
+  const hours = hourly.data.slice(0, 25);
+  let hour = 0;
+  let key = 0;
   const hourCards= hourly ? hours.map((x, y) => (
     <div key={key++} className={y === selected ? "selected" : "boxy-hourly"} onClick={() => choice(y)} onMouseEnter={() => choice(y)}>
       <h5>{hour++} hour(s) from now</h5>
       <ReactAnimatedWeather
-        icon={setIcon(x.icon)}
+        icon={x.icon.replace(/-/g, '_').toUpperCase()}
         color={defaults.color}
         size={defaults.size}
         animate={defaults.animate}
@@ -27,42 +29,11 @@ function Hourly(props) {
       <p className='hourly-summary'>{x.summary}</p>
     </div>
     )
-  ) : null
-  let hour = 0;
-  let key = 0;
+  ) : null;
 
   const choice = (index) => {
 
-    setSelected(index)
-  }
-
-
-  const setIcon = (x) => {
-
-    switch(x) {
-      case 'clear-day':
-      return 'CLEAR_DAY'
-      case 'clear-night':
-      return 'CLEAR_NIGHT'
-      case 'partly-cloudy-day':
-      return 'PARTLY_CLOUDY_DAY'
-      case 'partly-cloudy-night':
-      return 'PARTLY_CLOUDY_NIGHT'
-      case 'cloudy':
-      return 'CLOUDY'
-      case 'rain':
-      return 'RAIN'
-      case 'sleet':
-      return 'SLEET'
-      case 'snow':
-      return 'SNOW'
-      case 'wind':
-      return 'WIND'
-      case 'fog':
-      return 'FOG'
-      default:
-      return 'CLEAR_DAY'
-    }
+    setSelected(index);
   }
 
   if (hourly) {
@@ -79,11 +50,11 @@ function Hourly(props) {
           </div>
         </div>
       </div>
-    )
+    );
   } else {
     return (
       <p>loading...</p>
-    )
+    );
   }
 }
 
