@@ -17,7 +17,7 @@ function Hourly(props) {
   let hour = 0;
   let key = 0;
   const hourCards= hourly ? hours.map((x, y) => (
-    <div key={key++} className={y === selected ? "selected" : "boxy-hourly"} onClick={() => choice(y)} onMouseEnter={() => choice(y)}>
+    <div key={key++} className={y === selected ? 'selected' : 'boxy-hourly'} onClick={() => choice(y)} onMouseEnter={() => choice(y)}>
       <h5>{hour++} hour(s) from now</h5>
       <ReactAnimatedWeather
         icon={x.icon.replace(/-/g, '_').toUpperCase()}
@@ -38,9 +38,9 @@ function Hourly(props) {
 
   if (hourly) {
     return (
-      <div className="Section">
-        <div className="Section-div">
-          <div className="graph-hourly">
+      <div className='Section'>
+        <div className='Section-div'>
+          <div className='graph-hourly'>
             <Graph data={hours.map(x => x.apparentTemperature)} selected={selected} label='Temperature' type='line' x={Array.from({length: 25}, (x,i) => i)}/>
           </div>
           <div className='content'>
